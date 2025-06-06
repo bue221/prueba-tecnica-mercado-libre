@@ -1,0 +1,46 @@
+name: Backend Tests and Coverage
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'apps/backend/**'
+      - 'packages/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'apps/backend/**'
+      - 'packages/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run tests with coverage
+        run: pnpm --filter backend test:coverage
+
+      - name: Check coverage threshold
+        run: |
+          COVERAGE=$(cat apps/backend/coverage/coverage-summary.json | jq -r '.total.lines.pct')
+          if (( $(echo "$COVERAGE < 80" | bc -l) )); then
+            echo "Coverage is below 80% (current: $COVERAGE%)"
+            exit 1
+          fi
+        env:
+          COVERAGE_THRESHOLD: 80 
