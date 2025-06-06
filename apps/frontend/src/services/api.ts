@@ -8,7 +8,7 @@ export const productsApi = createApi({
     prepareHeaders: (headers) => {
       headers.set('Content-Type', 'application/json')
       headers.set('Accept', 'application/json')
-      headers.set('x-api-key', '1234')
+      headers.set('x-api-key', process.env.API_KEY || '')
       
       return headers
     }

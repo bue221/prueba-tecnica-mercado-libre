@@ -17,7 +17,7 @@ async function getProduct(slug: string) {
     cache: 'no-store',
     headers: {
       'Content-Type': 'application/json',
-      'x-api-key': '1234'
+      'x-api-key': process.env.API_KEY || ''
     },
   });
   return response.json();
@@ -28,7 +28,7 @@ async function getRelatedProducts(id: number) {
     cache: 'no-store',
     headers: {
       'Content-Type': 'application/json',
-      'x-api-key': '1234'
+      'x-api-key': process.env.API_KEY || ''
     },
   });
   return response.json();
