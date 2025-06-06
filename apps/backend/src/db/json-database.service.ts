@@ -6,7 +6,7 @@ export class JsonDatabaseService<T extends { id: number }> {
   private filePath: string;
 
   constructor(private entityName: string) {
-    this.filePath = path.join(__dirname, `../../../data/${entityName}.json`);
+    this.filePath = path.resolve(__dirname, '../../data', `${entityName}.json`);
     if (!fs.existsSync(this.filePath)) {
       fs.writeFileSync(this.filePath, JSON.stringify([]));
     }

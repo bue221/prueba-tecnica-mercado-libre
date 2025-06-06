@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Samsung Galaxy A55 5G Dual SIM 256 GB azul oscuro 8 GB RAM",
+    "price": 439,
+    "description": "Con su potente procesador y 8 GB de RAM, su computadora logrará un alto rendimiento con una alta velocidad de transmisión de contenido y ejecutará varias aplicaciones al mismo tiempo, sin demoras. Con su memoria interna de 256 GB puedes descargar todos los archivos y aplicaciones que necesites, guardar fotos y almacenar tus películas, series y videos favoritos para reproducirlos cuando quieras.",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_2X_602325-MLA74772893432_022024-F.webp",
+    "brand": "Samsung",
+    "stock": 10
+  },
+  {
+    "id": 2,
+    "name": "Motorola Edge 50 Fusion 5G 256 GB Azul Ártico 8 GB RAM",
+    "price": 419,
+    "description": "Motorola Edge 50 Fusion con 8GB RAM y 256GB de almacenamiento interno.",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_2X_602325-MLA74772893432_022024-F.webp",
+    "brand": "Motorola",
+    "stock": 5
+  },
+  {
+    "id": 3,
+    "name": "Samsung Galaxy A15 5G 8GB 256GB Negro Tanza",
+    "price": 326,
+    "description": "Samsung Galaxy A15 con 8GB RAM y 256GB de almacenamiento interno.",
+    "image": "https://http2.mlstatic.com/D_NQ_NP_2X_602325-MLA74772893432_022024-F.webp",
+    "brand": "Samsung",
+    "stock": 7
+  }
+] 
