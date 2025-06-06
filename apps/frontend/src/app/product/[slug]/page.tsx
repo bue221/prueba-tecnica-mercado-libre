@@ -1,6 +1,5 @@
 'use client'
 import { notFound } from "next/navigation";
-import { Metadata } from "next";
 import Image from "next/image"
 import { Star, Heart, Shield, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -9,6 +8,9 @@ import { Badge } from "@/components/ui/badge"
 import { useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import { Product } from "@mercado-libre/shared";
+import { formatPrice, getSellerRatingColor } from "@/lib/utils";
+import { useState } from "react";
+import Link from "next/link";
 
 // // Generate metadata for the product page
 // export function generateMetadata(): Promise<Metadata> {
@@ -46,7 +48,7 @@ export default function ProductDetail() {
   const product: Product = useSelector((state: RootState) => state.products.product);
   if (!product) return notFound();
 
-  const mainImage = product.images[0]
+  const [mainImage, setMainImage] = useState(0)
   const images = product.images
 
   return (
@@ -55,13 +57,11 @@ export default function ProductDetail() {
       <div className="bg-gray-100 px-2 md:px-4 py-2 mb-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-2 md:gap-0">
           <div className="flex flex-wrap items-center gap-1 text-xs text-blue-600">
-            <span className="hover:underline cursor-pointer">Volver al listado</span>
-            <span className="text-gray-400">|</span>
-            <span className="hover:underline cursor-pointer">Celulares y Teléfonos</span>
-            <span className="text-gray-400">&gt;</span>
-            <span className="hover:underline cursor-pointer">Celulares y Smartphones</span>
-            <span className="text-gray-400">&gt;</span>
-            <span>Samsung</span>
+            <Link href="/" className="hover:underline cursor-pointer">Inicio</Link>
+            <span className="text-gray-400">/</span>
+            <Link href="/search" className="hover:underline cursor-pointer">Volver al listado</Link>
+            <span className="text-gray-400">/</span>
+            <span className="text-gray-600">{product.title}</span>
           </div>
           <div className="flex items-center gap-4 text-xs text-blue-600">
             <span className="hover:underline cursor-pointer">Vender uno igual</span>
@@ -78,8 +78,9 @@ export default function ProductDetail() {
                 {images.map((i, index) => (
                   <div
                     key={i}
-                    className={`w-full h-16 border-2 rounded cursor-pointer hover:border-blue-500 ${index === 0 ? "border-blue-500" : "border-gray-200"
+                    className={`w-full h-16 border-2 rounded cursor-pointer hover:border-blue-500 ${index === mainImage ? "border-blue-500" : "border-gray-200"
                       }`}
+                    onClick={() => setMainImage(index)}
                   >
                     <Image
                       src={i}
@@ -99,7 +100,7 @@ export default function ProductDetail() {
               <div className="bg-white rounded-lg mb-6 p-2 md:p-8 flex justify-center h-[250px] sm:h-[400px] md:h-[600px]">
                 <div className="sticky top-0 w-full h-[400px]">
                   <Image
-                    src={mainImage}
+                    src={images[mainImage]}
                     alt={product.title}
                     fill
                     style={{ objectFit: 'cover' }}
@@ -112,44 +113,48 @@ export default function ProductDetail() {
               <div className="space-y-4 px-2 md:px-0">
                 {/* Condition and Sales */}
                 <div className="flex flex-wrap items-center gap-2 text-sm">
-                  <span className="text-gray-600">Nuevo</span>
+                  <span className="text-gray-600">{product.condition}</span>
                   <span className="text-gray-400">|</span>
-                  <span className="text-gray-600">+500 vendidos</span>
+                  <span className="text-gray-600">+{product.stats.soldCount} vendidos</span>
                 </div>
 
                 {/* Title */}
                 <h1 className="text-xl md:text-2xl text-gray-800 font-normal leading-tight">
-                  Samsung Galaxy A55 5G Dual SIM 256 GB azul oscuro 8 GB RAM
+                  {product.title}
                 </h1>
 
                 {/* Rating */}
                 <div className="flex items-center gap-2">
                   <div className="flex items-center">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="w-3 h-3 fill-orange-400 text-orange-400" />
+                    {Array.from({ length: product.stats.rating }).map((_, index) => (
+                      <Star key={index} className="w-3 h-3 fill-orange-400 text-orange-400" />
                     ))}
                   </div>
-                  <span className="text-sm text-gray-600">(503)</span>
+                  <span className="text-sm text-gray-600">({product.stats.reviewCount})</span>
                 </div>
 
                 {/* Price Section */}
                 <div className="space-y-2">
-                  <div className="text-xs text-gray-500 line-through">US$ 499</div>
+                  <div className="text-xs text-gray-500 line-through">{formatPrice(product.pricing.originalPrice)}</div>
                   <div className="flex flex-wrap items-baseline gap-2">
-                    <span className="text-2xl md:text-3xl font-light text-gray-800">US$ 439</span>
-                    <Badge className="bg-green-500 text-white text-xs px-2 py-1">12% OFF</Badge>
+                    <span className="text-2xl md:text-3xl font-light text-gray-800">{formatPrice(product.pricing.currentPrice)}</span>
+                    <Badge className="bg-green-500 text-white text-xs px-2 py-1">{product.pricing.discount}% OFF</Badge>
                     <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
                       <span className="text-white text-xs">?</span>
                     </div>
                   </div>
-                  <div className="text-sm text-gray-600">
-                    en 12 cuotas de <span className="font-medium">$ 1.918</span> sin interés
-                  </div>
-                  <div className="inline-block">
-                    <Badge className="bg-blue-100 text-blue-700 text-xs px-2 py-1 border border-blue-300">
-                      30% OFF CON BLUE VISA
-                    </Badge>
-                  </div>
+                  {product.pricing.installments.count > 0 && (
+                    <div className="text-sm text-gray-600">
+                      en {product.pricing.installments.count} cuotas de <span className="font-medium">{formatPrice(product.pricing.installments.amount)}</span> sin interés
+                    </div>
+                  )}
+                  {product.pricing.discount > 0 && (
+                    <div className="inline-block">
+                      <Badge className="bg-blue-100 text-blue-700 text-xs px-2 py-1 border border-blue-300">
+                        {product.pricing.discount}% OFF CON BLUE VISA
+                      </Badge>
+                    </div>
+                  )}
                   <div className="text-xs text-blue-600 cursor-pointer hover:underline">
                     Ver los medios de pago y promociones
                   </div>
@@ -167,9 +172,9 @@ export default function ProductDetail() {
                 <div className="space-y-3">
                   <div className="text-sm font-medium text-gray-700">Lo que tenés que saber de este producto</div>
                   <ul className="space-y-1 text-sm text-gray-600">
-                    <li>• Memoria RAM: 8 GB</li>
-                    <li>• Dispositivo desbloqueado para que elijas la compañía telefónica que prefieras.</li>
-                    <li>• Memoria interna de 256 GB.</li>
+                    {Object.entries(product.specifications).map(([key, value]: [string, any]) => (
+                      <li key={key}>• {key}: {value}</li>
+                    ))}
                   </ul>
                   <div className="text-xs text-blue-600 cursor-pointer hover:underline">Ver características</div>
                 </div>
@@ -286,7 +291,7 @@ export default function ProductDetail() {
                 </div>
                 <div className="mt-4">
                   <Button variant="link" className="text-blue-600 p-0 text-sm hover:underline">
-                    Ver más productos de Samsung
+                    Ver más productos de {product.seller.name}
                   </Button>
                 </div>
               </div>
@@ -295,73 +300,42 @@ export default function ProductDetail() {
               <div className="mt-8 px-2 md:px-0">
                 <h3 className="text-lg font-medium text-gray-800 mb-4">Características del producto</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-gray-600 text-sm">📱</span>
-                      </div>
-                      <div>
-                        <div className="text-sm font-medium text-gray-800">Tamaño de la pantalla: 6.6"</div>
-                        <div className="text-xs text-gray-600">(16.51 cm x 7.74 cm x 8.2 mm)</div>
-                        <div className="mt-2">
-                          <div className="text-xs text-gray-600 mb-1">PEQUEÑO</div>
-                          <div className="w-32 h-2 bg-gray-200 rounded-full">
-                            <div className="w-24 h-2 bg-blue-500 rounded-full"></div>
+                  {Object.entries(product.specifications).map(([key, value], index) => {
+                    // Map keys to appropriate emojis
+                    const emojiMap: { [key: string]: string } = {
+                      'screen': '📱',
+                      'memory': '💾',
+                      'camera': '📷',
+                      'nfc': '📶',
+                      'security': '🔒',
+                      'battery': '🔋',
+                      'processor': '⚡',
+                      'os': '💻',
+                      'connectivity': '🌐',
+                      'audio': '🎵',
+                      'sensors': '📡',
+                      'dimensions': '📏',
+                      'weight': '⚖️',
+                      'colors': '🎨',
+                      'default': '📝'
+                    };
+
+                    // Get emoji based on key or use default
+                    const emoji = emojiMap[key.toLowerCase()] || emojiMap.default;
+
+                    return (
+                      <div key={key} className="flex items-start gap-3">
+                        <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center flex-shrink-0">
+                          <span className="text-gray-600 text-sm">{emoji}</span>
+                        </div>
+                        <div>
+                          <div className="text-sm font-medium text-gray-800">
+                            {key}: {value}
                           </div>
-                          <div className="text-xs text-gray-600 mt-1">GRANDE</div>
                         </div>
                       </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center flex-shrink-0">
-                        <span className="text-gray-600 text-sm">💾</span>
-                      </div>
-                      <div>
-                        <div className="text-sm font-medium text-gray-800">Memoria interna: 256 GB</div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center flex-shrink-0">
-                        <span className="text-gray-600 text-sm">📷</span>
-                      </div>
-                      <div>
-                        <div className="text-sm font-medium text-gray-800">Cámara trasera principal: 50 Mpx</div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center flex-shrink-0">
-                        <span className="text-gray-600 text-sm">📶</span>
-                      </div>
-                      <div>
-                        <div className="text-sm font-medium text-gray-800">Con NFC: Sí</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center flex-shrink-0">
-                        <span className="text-gray-600 text-sm">📷</span>
-                      </div>
-                      <div>
-                        <div className="text-sm font-medium text-gray-800">Cámara frontal principal: 32 Mpx</div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 bg-gray-100 rounded flex items-center justify-center flex-shrink-0">
-                        <span className="text-gray-600 text-sm">🔒</span>
-                      </div>
-                      <div>
-                        <div className="text-sm font-medium text-gray-800">
-                          Desbloqueo: Huella dactilar y reconocimiento facial
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    );
+                  })}
                 </div>
 
                 <div className="mt-4">
@@ -376,22 +350,7 @@ export default function ProductDetail() {
               <div className="mt-8 px-2 md:px-0">
                 <h3 className="text-lg font-medium text-gray-800 mb-4">Descripción</h3>
                 <div className="space-y-4 text-sm text-gray-700">
-                  <div>
-                    <h4 className="font-medium text-gray-800 mb-2">Capacidad y eficiencia</h4>
-                    <p className="leading-relaxed">
-                      Con tu potente procesador y 8 GB de RAM, su computadora logrará un alto rendimiento con una alta
-                      velocidad de transmisión de contenido y ejecutar varias aplicaciones al mismo tiempo, sin demoras.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="font-medium text-gray-800 mb-2">Capacidad de almacenamiento ilimitada</h4>
-                    <p className="leading-relaxed">
-                      Olvídate de borrar. Con su memoria interna de 256 GB puedes descargar todos los archivos y
-                      aplicaciones que necesites, guardar fotos y almacenar tus películas, series y videos favoritos para
-                      reproducirlos cuando quieras.
-                    </p>
-                  </div>
+                  {product.description}
                 </div>
               </div>
             </div>
@@ -403,7 +362,7 @@ export default function ProductDetail() {
                   {/* Seller Info */}
                   <div className="flex items-center gap-2 text-sm">
                     <span className="text-blue-600 cursor-pointer hover:underline">
-                      Visita la Tienda oficial de Samsung
+                      Visita la Tienda oficial de {product.seller.name}
                     </span>
                     <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
                       <span className="text-white text-xs">?</span>
@@ -427,7 +386,7 @@ export default function ProductDetail() {
                       <div>
                         <div className="text-sm font-medium text-gray-800 mb-1">Stock disponible</div>
                         <div className="text-sm text-gray-600">
-                          Cantidad: <span className="font-medium">1 unidad</span> - (+99 disponibles)
+                          Cantidad: <span className="font-medium">1 unidad</span> - (+{product.stats.stockAvailable} disponibles)
                         </div>
                       </div>
 
@@ -473,22 +432,22 @@ export default function ProductDetail() {
                       <div className="flex items-center justify-between mb-3">
                         <div>
                           <div className="text-sm font-medium">Tienda Oficial</div>
-                          <div className="text-xl font-bold">Samsung</div>
+                          <div className="text-xl font-bold">{product.seller.name}</div>
                           <div className="text-xs text-gray-300">MercadoLibre</div>
-                          <div className="text-xs text-gray-300">+80 Productos</div>
+                          <div className="text-xs text-gray-300">{product.seller.totalSales} Productos</div>
                         </div>
                         <div className="text-right">
                           <div className="flex gap-1 mb-2">
                             <div className="flex flex-col items-center">
-                              <div className="w-2 h-2 bg-green-400 rounded-full mb-1"></div>
+                              <div className={`w-2 h-2 rounded-full mb-1 ${getSellerRatingColor(product.seller.rating)}`}></div>
                               <div className="text-xs">Atención</div>
                             </div>
                             <div className="flex flex-col items-center">
-                              <div className="w-2 h-2 bg-green-400 rounded-full mb-1"></div>
+                              <div className={`w-2 h-2 rounded-full mb-1 ${getSellerRatingColor(product.seller.rating)}`}></div>
                               <div className="text-xs">Entrega</div>
                             </div>
                             <div className="flex flex-col items-center">
-                              <div className="w-2 h-2 bg-green-400 rounded-full mb-1"></div>
+                              <div className={`w-2 h-2 rounded-full mb-1 ${getSellerRatingColor(product.seller.rating)}`}></div>
                               <div className="text-xs">Tiempo</div>
                             </div>
                           </div>
@@ -515,53 +474,60 @@ export default function ProductDetail() {
                     <CardContent className="p-3 md:p-4 space-y-4">
                       <h4 className="text-sm font-medium text-gray-800">Medios de pago</h4>
 
-                      <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-medium">
-                        Pagá en hasta 12 cuotas sin interés
-                      </Button>
-
+                      {product.paymentMethods.includes('Tarjeta de crédito') && product.pricing.installments.interest && (
+                        <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-medium">
+                          Pagá en hasta {product.pricing.installments.count} cuotas sin interés
+                        </Button>
+                      )}
                       <div className="space-y-3">
-                        <div>
-                          <div className="text-sm font-medium text-gray-800 mb-2">Tarjetas de crédito</div>
-                          <div className="text-xs text-gray-600 mb-2">Hasta 12 cuotas sin interés</div>
-                          <div className="flex flex-wrap gap-2">
-                            <div className="w-8 h-5 bg-red-500 rounded text-white text-xs flex items-center justify-center font-bold">
-                              MC
-                            </div>
-                            <div className="w-8 h-5 bg-blue-600 rounded text-white text-xs flex items-center justify-center font-bold">
-                              VISA
-                            </div>
-                            <div className="w-8 h-5 bg-blue-400 rounded text-white text-xs flex items-center justify-center font-bold">
-                              AMEX
-                            </div>
-                            <div className="w-8 h-5 bg-purple-600 rounded text-white text-xs flex items-center justify-center font-bold">
-                              OCA
+                        {product.paymentMethods.includes('Tarjeta de crédito') && (
+                          <div>
+                            <div className="text-sm font-medium text-gray-800 mb-2">Tarjetas de crédito</div>
+                            <div className="text-xs text-gray-600 mb-2">Hasta 12 cuotas sin interés</div>
+                            <div className="flex flex-wrap gap-2">
+                              <div className="w-8 h-5 bg-red-500 rounded text-white text-xs flex items-center justify-center font-bold">
+                                MC
+                              </div>
+                              <div className="w-8 h-5 bg-blue-600 rounded text-white text-xs flex items-center justify-center font-bold">
+                                VISA
+                              </div>
+                              <div className="w-8 h-5 bg-blue-400 rounded text-white text-xs flex items-center justify-center font-bold">
+                                AMEX
+                              </div>
+                              <div className="w-8 h-5 bg-purple-600 rounded text-white text-xs flex items-center justify-center font-bold">
+                                OCA
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        )}
 
-                        <div>
-                          <div className="text-sm font-medium text-gray-800 mb-2">Tarjetas de débito</div>
-                          <div className="flex flex-wrap gap-2">
-                            <div className="w-8 h-5 bg-blue-600 rounded text-white text-xs flex items-center justify-center font-bold">
-                              VISA
-                            </div>
-                            <div className="w-8 h-5 bg-red-500 rounded text-white text-xs flex items-center justify-center font-bold">
-                              MC
+                        {product.paymentMethods.includes('PSE') && (
+                          <div>
+                            <div className="text-sm font-medium text-gray-800 mb-2">Tarjetas de débito</div>
+                            <div className="flex flex-wrap gap-2">
+                              <div className="w-8 h-5 bg-blue-600 rounded text-white text-xs flex items-center justify-center font-bold">
+                                VISA
+                              </div>
+                              <div className="w-8 h-5 bg-red-500 rounded text-white text-xs flex items-center justify-center font-bold">
+                                MC
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        )}
 
-                        <div>
-                          <div className="text-sm font-medium text-gray-800 mb-2">Efectivo</div>
-                          <div className="flex flex-wrap gap-2">
-                            <div className="w-8 h-5 bg-black rounded text-white text-xs flex items-center justify-center font-bold">
-                              A
-                            </div>
-                            <div className="w-8 h-5 bg-green-600 rounded text-white text-xs flex items-center justify-center font-bold">
-                              BROU
+                        {product.paymentMethods.includes('Efectivo') && (
+                          <div>
+                            <div className="text-sm font-medium text-gray-800 mb-2">Efectivo</div>
+                            <div className="flex flex-wrap gap-2">
+                              <div className="w-8 h-5 bg-black rounded text-white text-xs flex items-center justify-center font-bold">
+                                A
+                              </div>
+                              <div className="w-8 h-5 bg-green-600 rounded text-white text-xs flex items-center justify-center font-bold">
+                                BROU
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        )}
                       </div>
 
                       <div className="text-xs text-blue-600 cursor-pointer hover:underline">

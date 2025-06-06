@@ -1,3 +1,4 @@
+import { formatPrice } from "@/lib/utils"
 import Link from "next/link"
 import type React from "react"
 
@@ -37,9 +38,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
   // Common components
   const PriceSection = () => (
     <div className={variant === "vertical" ? "mb-4" : ""}>
-      {originalPrice && <p className="text-gray-400 line-through text-sm mb-1">{originalPrice}</p>}
+      {originalPrice && <p className="text-gray-400 line-through text-sm mb-1">{formatPrice(originalPrice)}</p>}
       <div className={`flex items-center gap-${variant === "vertical" ? "2" : "3"} flex-wrap`}>
-        <span className={`text-${variant === "vertical" ? "md" : "xl"} font-light text-gray-800`}>{currentPrice}</span>
+        <span className={`text-${variant === "vertical" ? "md" : "xl"} font-light text-gray-800`}>{formatPrice(currentPrice)}</span>
         {discount && <span className="text-green-600 font-medium text-sm bg-green-50 px-2 py-1 rounded">{discount} OFF</span>}
       </div>
     </div>
@@ -50,7 +51,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <p className="text-green-600 text-xs mb-1">
         en{" "}
         <span className="font-medium">
-          {installments?.count} cuotas de {installments?.amount}
+          {installments?.count} cuotas de {formatPrice(Number(installments?.amount || 0))}
         </span>
       </p>
       <p className="text-green-600 text-xs">
@@ -102,7 +103,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   }
 
   return (
-    <Link href={`/product/${slug}`} onClick={onClick} className="w-[390px] bg-white rounded-lg p-2 font-sans cursor-pointer">
+    <Link href={`/product/${slug}`} onClick={onClick} className="min-w-[250px]  w-[250px] bg-white rounded-lg p-2 font-sans cursor-pointer">
       <div className="flex justify-center mb-4 bg-gray-50 rounded-lg p-1">
         <img src={image || "/placeholder.svg"} alt={title} className="w-full h-32 object-cover" />
       </div>
