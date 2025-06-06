@@ -1,16 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { JsonDatabaseService } from '../db/json-database.service';
-
-export interface Product {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-  image: string;
-  brand: string;
-  stock: number;
-  // Agrega los campos necesarios según la vista
-}
+import { Product } from './types';
 
 @Injectable()
 export class ProductsService {
@@ -20,16 +10,15 @@ export class ProductsService {
     this.db = new JsonDatabaseService<Product>('products');
   }
 
-  findAll() {
+  findAll(): Product[] {
     return this.db.findAll();
   }
 
-  findOne(id: number) {
+  findOne(id: number): Product | undefined {
     return this.db.findOne(id);
   }
 
-  findRecommended(id: number) {
-    // Lógica simple: devolver los primeros 3 productos distintos al actual
+  findRecommended(id: number): Product[] {
     const all = this.db.findAll();
     return all.filter((p) => p.id !== id).slice(0, 3);
   }

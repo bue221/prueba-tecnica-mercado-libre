@@ -1,5 +1,5 @@
 import CarouselBanner from "@/components/CarouselBanner";
-import ProductSection from "@/components/ProductSection";
+import MainContent from "@/components/MainContent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -37,18 +37,7 @@ export default function Home() {
           ]}
         />
       </div>
-      <main className="max-w-7xl mx-auto px-4 py-6 z-10 relative">
-        <div className="mt-8 w-full gap-6 flex flex-col">
-          <ProductSection />
-          <div className="bg-white rounded-lg shadow p-4">
-            <ProductSection />
-          </div>
-          <div>
-            <img src="/img/banner_2.webp" alt="Banner" className="w-full h-full object-cover rounded-lg" />
-          </div>
-          <ProductSection />
-        </div>
-      </main>
+      <MainContent />
     </div>
   );
 }

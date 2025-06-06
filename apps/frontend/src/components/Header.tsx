@@ -45,7 +45,7 @@ export default function Header() {
         </div>
 
         {/* Navigation */}
-        <nav className="mt-2 flex items-center gap-4 text-sm justify-between">
+        <nav className="mt-2 hidden md:flex items-center gap-4 text-sm justify-between">
           <div className="flex items-center gap-4">
             <a href="#" className="text-ml-dark-gray hover:text-black">Categorías</a>
             <a href="#" className="text-ml-dark-gray hover:text-black">Ofertas</a>

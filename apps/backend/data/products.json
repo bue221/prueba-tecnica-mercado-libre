@@ -1,29 +1,1137 @@
 [
   {
     "id": 1,
-    "name": "Samsung Galaxy A55 5G Dual SIM 256 GB azul oscuro 8 GB RAM",
-    "price": 439,
-    "description": "Con su potente procesador y 8 GB de RAM, su computadora logrará un alto rendimiento con una alta velocidad de transmisión de contenido y ejecutará varias aplicaciones al mismo tiempo, sin demoras. Con su memoria interna de 256 GB puedes descargar todos los archivos y aplicaciones que necesites, guardar fotos y almacenar tus películas, series y videos favoritos para reproducirlos cuando quieras.",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_2X_602325-MLA74772893432_022024-F.webp",
-    "brand": "Samsung",
-    "stock": 10
+    "slug": "philips-series-3000-s3133-41",
+    "title": "Philips Series 3000 S3133/41 - Afeitadora Eléctrica",
+    "description": "Afeitadora eléctrica Philips Series 3000 con sistema de corte de precisión, 3 cabezales flexibles y hasta 40 minutos de autonomía. Ideal para piel sensible.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg",
+      "https://images.pexels.com/photos/1037993/pexels-photo-1037993.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 89990,
+      "discount": 20,
+      "currentPrice": 71990,
+      "installments": {
+        "count": 12,
+        "amount": 5999,
+        "total": 71990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": [
+      "Tarjeta de crédito",
+      "MercadoPago"
+    ],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "24h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Philips Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "1000+",
+      "rating": 4.8
+    },
+    "stats": {
+      "soldCount": 150,
+      "rating": 4.7,
+      "reviewCount": 45,
+      "stockAvailable": 50
+    },
+    "specifications": {
+      "color": "Negro",
+      "voltage": "220V",
+      "functions": ["Afeitado en seco", "Afeitado en húmedo", "Recorte de barba"],
+      "wireless": true,
+      "batteryLife": "40 minutos",
+      "chargeTime": "1 hora",
+      "waterResistant": true,
+      "silent": true,
+      "travelFriendly": true,
+      "combs": 3,
+      "includedAccessories": ["Cargador", "Estuche de viaje", "Cepillo limpiador"]
+    }
   },
   {
     "id": 2,
-    "name": "Motorola Edge 50 Fusion 5G 256 GB Azul Ártico 8 GB RAM",
-    "price": 419,
-    "description": "Motorola Edge 50 Fusion con 8GB RAM y 256GB de almacenamiento interno.",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_2X_602325-MLA74772893432_022024-F.webp",
-    "brand": "Motorola",
-    "stock": 5
+    "slug": "samsung-galaxy-s24-ultra",
+    "title": "Samsung Galaxy S24 Ultra 5G 256GB",
+    "description": "El último smartphone de Samsung con IA integrada, cámara de 200MP y procesador Snapdragon 8 Gen 3.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg",
+      "https://images.pexels.com/photos/404281/pexels-photo-404281.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 4999990,
+      "discount": 10,
+      "currentPrice": 4499990,
+      "installments": {
+        "count": 24,
+        "amount": 187499,
+        "total": 4499990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": [
+      "Tarjeta de crédito",
+      "MercadoPago",
+      "PSE"
+    ],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "24h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Samsung Colombia",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "5000+",
+      "rating": 4.9
+    },
+    "stats": {
+      "soldCount": 1200,
+      "rating": 4.8,
+      "reviewCount": 450,
+      "stockAvailable": 100
+    },
+    "specifications": {
+      "color": "Titanio Negro",
+      "voltage": "5V",
+      "functions": ["Cámara 200MP", "IA integrada", "S Pen"],
+      "wireless": true,
+      "batteryLife": "5000mAh",
+      "chargeTime": "45 minutos",
+      "waterResistant": true,
+      "silent": true,
+      "travelFriendly": true,
+      "combs": 0,
+      "includedAccessories": ["Cargador 45W", "Cable USB-C", "Fundas protectoras"]
+    }
   },
   {
     "id": 3,
-    "name": "Samsung Galaxy A15 5G 8GB 256GB Negro Tanza",
-    "price": 326,
-    "description": "Samsung Galaxy A15 con 8GB RAM y 256GB de almacenamiento interno.",
-    "image": "https://http2.mlstatic.com/D_NQ_NP_2X_602325-MLA74772893432_022024-F.webp",
-    "brand": "Samsung",
-    "stock": 7
+    "slug": "macbook-pro-m3-pro",
+    "title": "MacBook Pro 14\" M3 Pro 512GB",
+    "description": "Laptop Apple con chip M3 Pro, 18GB RAM y pantalla Liquid Retina XDR de 14 pulgadas.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/812264/pexels-photo-812264.jpeg",
+      "https://images.pexels.com/photos/812265/pexels-photo-812265.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 8999990,
+      "discount": 5,
+      "currentPrice": 8549990,
+      "installments": {
+        "count": 36,
+        "amount": 237499,
+        "total": 8549990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": [
+      "Tarjeta de crédito",
+      "MercadoPago"
+    ],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "48h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Apple Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "3000+",
+      "rating": 4.9
+    },
+    "stats": {
+      "soldCount": 800,
+      "rating": 4.9,
+      "reviewCount": 300,
+      "stockAvailable": 50
+    },
+    "specifications": {
+      "color": "Space Gray",
+      "voltage": "100-240V",
+      "functions": ["Procesador M3 Pro", "18GB RAM", "512GB SSD"],
+      "wireless": true,
+      "batteryLife": "18 horas",
+      "chargeTime": "2 horas",
+      "waterResistant": false,
+      "silent": true,
+      "travelFriendly": true,
+      "combs": 0,
+      "includedAccessories": ["Cargador MagSafe", "Cable USB-C"]
+    }
+  },
+  {
+    "id": 4,
+    "slug": "sony-wh-1000xm5",
+    "title": "Sony WH-1000XM5 - Audífonos Inalámbricos",
+    "description": "Audífonos premium con cancelación de ruido líder en la industria y sonido Hi-Res.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/3394666/pexels-photo-3394666.jpeg",
+      "https://images.pexels.com/photos/3394667/pexels-photo-3394667.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 1299990,
+      "discount": 15,
+      "currentPrice": 1104990,
+      "installments": {
+        "count": 12,
+        "amount": 92082,
+        "total": 1104990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": [
+      "Tarjeta de crédito",
+      "MercadoPago",
+      "PSE"
+    ],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "24h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Sony Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "2000+",
+      "rating": 4.8
+    },
+    "stats": {
+      "soldCount": 950,
+      "rating": 4.9,
+      "reviewCount": 400,
+      "stockAvailable": 75
+    },
+    "specifications": {
+      "color": "Negro",
+      "voltage": "5V",
+      "functions": ["Cancelación de ruido", "Bluetooth 5.2", "Hi-Res Audio"],
+      "wireless": true,
+      "batteryLife": "30 horas",
+      "chargeTime": "3 horas",
+      "waterResistant": false,
+      "silent": true,
+      "travelFriendly": true,
+      "combs": 0,
+      "includedAccessories": ["Estuche", "Cable USB-C", "Cable de audio"]
+    }
+  },
+  {
+    "id": 5,
+    "slug": "dyson-v15-detect",
+    "title": "Dyson V15 Detect Absolute - Aspiradora Inalámbrica",
+    "description": "Aspiradora inalámbrica con tecnología de detección de partículas y sistema de filtración avanzado.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/4108717/pexels-photo-4108717.jpeg",
+      "https://images.pexels.com/photos/4108718/pexels-photo-4108718.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 2499990,
+      "discount": 10,
+      "currentPrice": 2249990,
+      "installments": {
+        "count": 24,
+        "amount": 93749,
+        "total": 2249990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": [
+      "Tarjeta de crédito",
+      "MercadoPago"
+    ],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "48h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Dyson Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "1500+",
+      "rating": 4.9
+    },
+    "stats": {
+      "soldCount": 600,
+      "rating": 4.8,
+      "reviewCount": 250,
+      "stockAvailable": 40
+    },
+    "specifications": {
+      "color": "Níquel/Cobre",
+      "voltage": "220V",
+      "functions": ["Detección de partículas", "3 modos de succión", "Filtro HEPA"],
+      "wireless": true,
+      "batteryLife": "60 minutos",
+      "chargeTime": "4.5 horas",
+      "waterResistant": false,
+      "silent": false,
+      "travelFriendly": true,
+      "combs": 0,
+      "includedAccessories": ["Base de carga", "5 accesorios", "Filtros de repuesto"]
+    }
+  },
+  {
+    "id": 6,
+    "slug": "braun-series-9-9370cc",
+    "title": "Braun Series 9 9370cc - Afeitadora Eléctrica",
+    "description": "Afeitadora eléctrica premium con sistema de limpieza automático y 5 elementos de corte.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg",
+      "https://images.pexels.com/photos/1037993/pexels-photo-1037993.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 1599990,
+      "discount": 20,
+      "currentPrice": 1279990,
+      "installments": {
+        "count": 12,
+        "amount": 106665,
+        "total": 1279990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": [
+      "Tarjeta de crédito",
+      "MercadoPago",
+      "PSE"
+    ],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "24h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Braun Colombia",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "3000+",
+      "rating": 4.9
+    },
+    "stats": {
+      "soldCount": 1200,
+      "rating": 4.8,
+      "reviewCount": 500,
+      "stockAvailable": 60
+    },
+    "specifications": {
+      "color": "Plata",
+      "voltage": "220V",
+      "functions": ["Limpieza automática", "Afeitado en seco/húmedo", "Recorte de barba"],
+      "wireless": true,
+      "batteryLife": "50 minutos",
+      "chargeTime": "1 hora",
+      "waterResistant": true,
+      "silent": true,
+      "travelFriendly": true,
+      "combs": 5,
+      "includedAccessories": ["Base de limpieza", "Estuche de viaje", "Cepillo limpiador"]
+    }
+  },
+  {
+    "id": 7,
+    "slug": "iphone-15-pro-max",
+    "title": "iPhone 15 Pro Max 256GB",
+    "description": "El iPhone más avanzado con chip A17 Pro, cámara de 48MP y diseño en titanio.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg",
+      "https://images.pexels.com/photos/404281/pexels-photo-404281.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 5999990,
+      "discount": 5,
+      "currentPrice": 5699990,
+      "installments": {
+        "count": 36,
+        "amount": 158333,
+        "total": 5699990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": [
+      "Tarjeta de crédito",
+      "MercadoPago"
+    ],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "24h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Apple Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "8000+",
+      "rating": 4.9
+    },
+    "stats": {
+      "soldCount": 2500,
+      "rating": 4.9,
+      "reviewCount": 1000,
+      "stockAvailable": 150
+    },
+    "specifications": {
+      "color": "Titanio Natural",
+      "voltage": "5V",
+      "functions": ["Cámara 48MP", "USB-C", "Dynamic Island"],
+      "wireless": true,
+      "batteryLife": "29 horas",
+      "chargeTime": "30 minutos",
+      "waterResistant": true,
+      "silent": true,
+      "travelFriendly": true,
+      "combs": 0,
+      "includedAccessories": ["Cable USB-C", "Documentación"]
+    }
+  },
+  {
+    "id": 8,
+    "slug": "lg-oled-c3-65",
+    "title": "LG OLED C3 65\" 4K Smart TV",
+    "description": "TV OLED con tecnología AI ThinQ, Dolby Vision y sonido inmersivo.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/6976094/pexels-photo-6976094.jpeg",
+      "https://images.pexels.com/photos/6976095/pexels-photo-6976095.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 6999990,
+      "discount": 15,
+      "currentPrice": 5949990,
+      "installments": {
+        "count": 24,
+        "amount": 247916,
+        "total": 5949990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": [
+      "Tarjeta de crédito",
+      "MercadoPago",
+      "PSE"
+    ],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "72h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "LG Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "4000+",
+      "rating": 4.8
+    },
+    "stats": {
+      "soldCount": 800,
+      "rating": 4.9,
+      "reviewCount": 350,
+      "stockAvailable": 30
+    },
+    "specifications": {
+      "color": "Negro",
+      "voltage": "220V",
+      "functions": ["webOS", "Dolby Vision", "AI ThinQ"],
+      "wireless": true,
+      "batteryLife": "N/A",
+      "chargeTime": "N/A",
+      "waterResistant": false,
+      "silent": true,
+      "travelFriendly": false,
+      "combs": 0,
+      "includedAccessories": ["Control remoto", "Base", "Cables"]
+    }
+  },
+  {
+    "id": 9,
+    "slug": "canon-eos-r6-mark-ii",
+    "title": "Canon EOS R6 Mark II - Cámara Mirrorless",
+    "description": "Cámara mirrorless full-frame con grabación 4K y estabilización de imagen avanzada.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/51383/photo-camera-subject-photographer-51383.jpeg",
+      "https://images.pexels.com/photos/51384/photo-camera-subject-photographer-51384.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 7999990,
+      "discount": 10,
+      "currentPrice": 7199990,
+      "installments": {
+        "count": 24,
+        "amount": 299999,
+        "total": 7199990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": [
+      "Tarjeta de crédito",
+      "MercadoPago"
+    ],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "48h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Canon Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "2000+",
+      "rating": 4.9
+    },
+    "stats": {
+      "soldCount": 400,
+      "rating": 4.9,
+      "reviewCount": 180,
+      "stockAvailable": 25
+    },
+    "specifications": {
+      "color": "Negro",
+      "voltage": "7.2V",
+      "functions": ["4K 60fps", "IBIS", "Dual Pixel AF"],
+      "wireless": true,
+      "batteryLife": "580 disparos",
+      "chargeTime": "2 horas",
+      "waterResistant": true,
+      "silent": true,
+      "travelFriendly": true,
+      "combs": 0,
+      "includedAccessories": ["Cargador", "Batería", "Correa"]
+    }
+  },
+  {
+    "id": 10,
+    "slug": "nintendo-switch-oled",
+    "title": "Nintendo Switch OLED - Consola",
+    "description": "Consola Nintendo Switch con pantalla OLED de 7 pulgadas y mejor audio.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg",
+      "https://images.pexels.com/photos/442577/pexels-photo-442577.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 1799990,
+      "discount": 0,
+      "currentPrice": 1799990,
+      "installments": {
+        "count": 12,
+        "amount": 149999,
+        "total": 1799990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": [
+      "Tarjeta de crédito",
+      "MercadoPago",
+      "PSE"
+    ],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "24h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Nintendo Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "3000+",
+      "rating": 4.9
+    },
+    "stats": {
+      "soldCount": 2000,
+      "rating": 4.8,
+      "reviewCount": 800,
+      "stockAvailable": 100
+    },
+    "specifications": {
+      "color": "Blanco",
+      "voltage": "5V",
+      "functions": ["Modo portátil", "Modo TV", "Modo mesa"],
+      "wireless": true,
+      "batteryLife": "9 horas",
+      "chargeTime": "3 horas",
+      "waterResistant": false,
+      "silent": true,
+      "travelFriendly": true,
+      "combs": 0,
+      "includedAccessories": ["Dock", "Joy-Con", "Cable HDMI"]
+    }
+  },
+  {
+    "id": 11,
+    "slug": "airpods-pro-2",
+    "title": "AirPods Pro 2da Generación",
+    "description": "Audífonos inalámbricos con cancelación de ruido activa y chip H2.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/3394666/pexels-photo-3394666.jpeg",
+      "https://images.pexels.com/photos/3394667/pexels-photo-3394667.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 899990,
+      "discount": 10,
+      "currentPrice": 809990,
+      "installments": {
+        "count": 12,
+        "amount": 67499,
+        "total": 809990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": ["Tarjeta de crédito", "MercadoPago"],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "24h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Apple Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "5000+",
+      "rating": 4.9
+    },
+    "stats": {
+      "soldCount": 3000,
+      "rating": 4.8,
+      "reviewCount": 1200,
+      "stockAvailable": 200
+    },
+    "specifications": {
+      "color": "Blanco",
+      "voltage": "5V",
+      "functions": ["Cancelación de ruido", "Modo ambiente", "Carga inalámbrica"],
+      "wireless": true,
+      "batteryLife": "6 horas",
+      "chargeTime": "1 hora",
+      "waterResistant": true,
+      "silent": true,
+      "travelFriendly": true,
+      "combs": 0,
+      "includedAccessories": ["Estuche de carga", "Tips de silicona", "Cable USB-C"]
+    }
+  },
+  {
+    "id": 12,
+    "slug": "dell-xps-15-2024",
+    "title": "Dell XPS 15 2024 - Laptop",
+    "description": "Laptop premium con pantalla OLED 4K, Intel Core i9 y RTX 4070.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/812264/pexels-photo-812264.jpeg",
+      "https://images.pexels.com/photos/812265/pexels-photo-812265.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 12999990,
+      "discount": 5,
+      "currentPrice": 12349990,
+      "installments": {
+        "count": 36,
+        "amount": 342999,
+        "total": 12349990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": ["Tarjeta de crédito", "MercadoPago"],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "48h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Dell Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "2000+",
+      "rating": 4.8
+    },
+    "stats": {
+      "soldCount": 300,
+      "rating": 4.9,
+      "reviewCount": 150,
+      "stockAvailable": 20
+    },
+    "specifications": {
+      "color": "Plata",
+      "voltage": "100-240V",
+      "functions": ["Windows 11 Pro", "RTX 4070", "32GB RAM"],
+      "wireless": true,
+      "batteryLife": "12 horas",
+      "chargeTime": "2 horas",
+      "waterResistant": false,
+      "silent": true,
+      "travelFriendly": true,
+      "combs": 0,
+      "includedAccessories": ["Cargador 130W", "Cable USB-C", "Documentación"]
+    }
+  },
+  {
+    "id": 13,
+    "slug": "gopro-hero-12-black",
+    "title": "GoPro HERO12 Black - Cámara de Acción",
+    "description": "Cámara de acción 5.3K con estabilización HyperSmooth 6.0 y modo HDR.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/51383/photo-camera-subject-photographer-51383.jpeg",
+      "https://images.pexels.com/photos/51384/photo-camera-subject-photographer-51384.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 2499990,
+      "discount": 15,
+      "currentPrice": 2124990,
+      "installments": {
+        "count": 12,
+        "amount": 177082,
+        "total": 2124990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": ["Tarjeta de crédito", "MercadoPago", "PSE"],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "24h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "GoPro Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "1500+",
+      "rating": 4.9
+    },
+    "stats": {
+      "soldCount": 800,
+      "rating": 4.8,
+      "reviewCount": 350,
+      "stockAvailable": 50
+    },
+    "specifications": {
+      "color": "Negro",
+      "voltage": "5V",
+      "functions": ["5.3K 60fps", "HyperSmooth 6.0", "HDR"],
+      "wireless": true,
+      "batteryLife": "2.5 horas",
+      "chargeTime": "1.5 horas",
+      "waterResistant": true,
+      "silent": true,
+      "travelFriendly": true,
+      "combs": 0,
+      "includedAccessories": ["Batería", "Cargador", "Carcasa protectora"]
+    }
+  },
+  {
+    "id": 14,
+    "slug": "amazon-echo-show-15",
+    "title": "Amazon Echo Show 15 - Smart Display",
+    "description": "Pantalla inteligente de 15.6\" con Alexa y reconocimiento facial.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/6976094/pexels-photo-6976094.jpeg",
+      "https://images.pexels.com/photos/6976095/pexels-photo-6976095.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 899990,
+      "discount": 20,
+      "currentPrice": 719990,
+      "installments": {
+        "count": 12,
+        "amount": 59999,
+        "total": 719990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": ["Tarjeta de crédito", "MercadoPago"],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "48h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Amazon Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "3000+",
+      "rating": 4.8
+    },
+    "stats": {
+      "soldCount": 1200,
+      "rating": 4.7,
+      "reviewCount": 500,
+      "stockAvailable": 80
+    },
+    "specifications": {
+      "color": "Blanco",
+      "voltage": "220V",
+      "functions": ["Alexa", "Zoom", "Fire TV"],
+      "wireless": true,
+      "batteryLife": "N/A",
+      "chargeTime": "N/A",
+      "waterResistant": false,
+      "silent": true,
+      "travelFriendly": false,
+      "combs": 0,
+      "includedAccessories": ["Cable de alimentación", "Soporte de pared"]
+    }
+  },
+  {
+    "id": 15,
+    "slug": "philips-hue-starter-kit",
+    "title": "Philips Hue Starter Kit - Iluminación Inteligente",
+    "description": "Kit de inicio con 3 bombillas LED inteligentes y puente Hue.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/4108717/pexels-photo-4108717.jpeg",
+      "https://images.pexels.com/photos/4108718/pexels-photo-4108718.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 599990,
+      "discount": 10,
+      "currentPrice": 539990,
+      "installments": {
+        "count": 12,
+        "amount": 44999,
+        "total": 539990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": ["Tarjeta de crédito", "MercadoPago", "PSE"],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "24h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Philips Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "2000+",
+      "rating": 4.8
+    },
+    "stats": {
+      "soldCount": 1500,
+      "rating": 4.7,
+      "reviewCount": 600,
+      "stockAvailable": 100
+    },
+    "specifications": {
+      "color": "Blanco",
+      "voltage": "220V",
+      "functions": ["Control por voz", "16 millones de colores", "Programación"],
+      "wireless": true,
+      "batteryLife": "N/A",
+      "chargeTime": "N/A",
+      "waterResistant": false,
+      "silent": true,
+      "travelFriendly": true,
+      "combs": 0,
+      "includedAccessories": ["Puente Hue", "3 bombillas", "Cable Ethernet"]
+    }
+  },
+  {
+    "id": 16,
+    "slug": "samsung-bespoke-refrigerator",
+    "title": "Samsung Bespoke Refrigerador 4 Puertas",
+    "description": "Refrigerador inteligente con Family Hub y diseño personalizable.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/4108717/pexels-photo-4108717.jpeg",
+      "https://images.pexels.com/photos/4108718/pexels-photo-4108718.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 8999990,
+      "discount": 15,
+      "currentPrice": 7649990,
+      "installments": {
+        "count": 36,
+        "amount": 212499,
+        "total": 7649990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": ["Tarjeta de crédito", "MercadoPago"],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "72h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Samsung Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "3000+",
+      "rating": 4.9
+    },
+    "stats": {
+      "soldCount": 200,
+      "rating": 4.8,
+      "reviewCount": 80,
+      "stockAvailable": 15
+    },
+    "specifications": {
+      "color": "Personalizable",
+      "voltage": "220V",
+      "functions": ["Family Hub", "Twin Cooling Plus", "SmartThings"],
+      "wireless": true,
+      "batteryLife": "N/A",
+      "chargeTime": "N/A",
+      "waterResistant": false,
+      "silent": true,
+      "travelFriendly": false,
+      "combs": 0,
+      "includedAccessories": ["Filtro de agua", "Manual", "Garantía"]
+    }
+  },
+  {
+    "id": 17,
+    "slug": "sonos-arc",
+    "title": "Sonos Arc - Soundbar",
+    "description": "Soundbar premium con Dolby Atmos y sonido inmersivo.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/3394666/pexels-photo-3394666.jpeg",
+      "https://images.pexels.com/photos/3394667/pexels-photo-3394667.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 1999990,
+      "discount": 10,
+      "currentPrice": 1799990,
+      "installments": {
+        "count": 12,
+        "amount": 149999,
+        "total": 1799990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": ["Tarjeta de crédito", "MercadoPago"],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "48h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Sonos Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "1000+",
+      "rating": 4.9
+    },
+    "stats": {
+      "soldCount": 600,
+      "rating": 4.8,
+      "reviewCount": 250,
+      "stockAvailable": 40
+    },
+    "specifications": {
+      "color": "Negro",
+      "voltage": "220V",
+      "functions": ["Dolby Atmos", "AirPlay 2", "HDMI eARC"],
+      "wireless": true,
+      "batteryLife": "N/A",
+      "chargeTime": "N/A",
+      "waterResistant": false,
+      "silent": true,
+      "travelFriendly": false,
+      "combs": 0,
+      "includedAccessories": ["Cable HDMI", "Cable de alimentación", "Manual"]
+    }
+  },
+  {
+    "id": 18,
+    "slug": "ring-video-doorbell-pro",
+    "title": "Ring Video Doorbell Pro 2",
+    "description": "Timbre inteligente con visión nocturna y detección de movimiento 3D.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/4108717/pexels-photo-4108717.jpeg",
+      "https://images.pexels.com/photos/4108718/pexels-photo-4108718.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 499990,
+      "discount": 20,
+      "currentPrice": 399990,
+      "installments": {
+        "count": 12,
+        "amount": 33332,
+        "total": 399990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": ["Tarjeta de crédito", "MercadoPago"],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "24h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Ring Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "2000+",
+      "rating": 4.8
+    },
+    "stats": {
+      "soldCount": 1500,
+      "rating": 4.7,
+      "reviewCount": 600,
+      "stockAvailable": 100
+    },
+    "specifications": {
+      "color": "Negro",
+      "voltage": "220V",
+      "functions": ["Visión nocturna", "Detección 3D", "Audio bidireccional"],
+      "wireless": true,
+      "batteryLife": "6 meses",
+      "chargeTime": "4 horas",
+      "waterResistant": true,
+      "silent": true,
+      "travelFriendly": true,
+      "combs": 0,
+      "includedAccessories": ["Batería", "Cargador", "Herramientas de instalación"]
+    }
+  },
+  {
+    "id": 19,
+    "slug": "roborock-s8-pro-ultra",
+    "title": "Roborock S8 Pro Ultra - Robot Aspirador",
+    "description": "Robot aspirador con estación de limpieza automática y mapeo 3D.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/4108717/pexels-photo-4108717.jpeg",
+      "https://images.pexels.com/photos/4108718/pexels-photo-4108718.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 2999990,
+      "discount": 15,
+      "currentPrice": 2549990,
+      "installments": {
+        "count": 24,
+        "amount": 106249,
+        "total": 2549990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": ["Tarjeta de crédito", "MercadoPago", "PSE"],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "48h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Roborock Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "1000+",
+      "rating": 4.9
+    },
+    "stats": {
+      "soldCount": 400,
+      "rating": 4.8,
+      "reviewCount": 180,
+      "stockAvailable": 30
+    },
+    "specifications": {
+      "color": "Blanco",
+      "voltage": "220V",
+      "functions": ["Limpieza automática", "Mapeo 3D", "Control por app"],
+      "wireless": true,
+      "batteryLife": "180 minutos",
+      "chargeTime": "3 horas",
+      "waterResistant": false,
+      "silent": false,
+      "travelFriendly": true,
+      "combs": 0,
+      "includedAccessories": ["Estación de limpieza", "Filtros", "Cepillos"]
+    }
+  },
+  {
+    "id": 20,
+    "slug": "garmin-fenix-7x",
+    "title": "Garmin Fenix 7X - Reloj Inteligente",
+    "description": "Reloj deportivo premium con GPS, pulsómetro y múltiples modos de entrenamiento.",
+    "condition": "Nuevo",
+    "images": [
+      "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg",
+      "https://images.pexels.com/photos/442577/pexels-photo-442577.jpeg"
+    ],
+    "pricing": {
+      "originalPrice": 3999990,
+      "discount": 10,
+      "currentPrice": 3599990,
+      "installments": {
+        "count": 24,
+        "amount": 149999,
+        "total": 3599990,
+        "interest": true,
+        "interestRate": 0.5
+      }
+    },
+    "paymentMethods": ["Tarjeta de crédito", "MercadoPago"],
+    "shipping": {
+      "isFree": true,
+      "deliveryTime": "24h",
+      "fullfilmentByPlatform": true
+    },
+    "seller": {
+      "name": "Garmin Store",
+      "isOfficialStore": true,
+      "level": "5",
+      "totalSales": "1500+",
+      "rating": 4.9
+    },
+    "stats": {
+      "soldCount": 300,
+      "rating": 4.8,
+      "reviewCount": 120,
+      "stockAvailable": 25
+    },
+    "specifications": {
+      "color": "Negro",
+      "voltage": "5V",
+      "functions": ["GPS", "Pulsómetro", "SpO2"],
+      "wireless": true,
+      "batteryLife": "28 días",
+      "chargeTime": "2 horas",
+      "waterResistant": true,
+      "silent": true,
+      "travelFriendly": true,
+      "combs": 0,
+      "includedAccessories": ["Cargador", "Correa", "Manual"]
+    }
   }
 ] 

@@ -1,3 +1,4 @@
+import Link from "next/link"
 import type React from "react"
 
 interface ProductCardProps {
@@ -17,6 +18,8 @@ interface ProductCardProps {
     isFull: boolean
   }
   variant?: "vertical" | "horizontal"
+  slug: string
+  onClick?: () => void
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
@@ -28,6 +31,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
   installments,
   shipping,
   variant = "vertical",
+  slug,
+  onClick,
 }) => {
   // Common components
   const PriceSection = () => (
@@ -76,7 +81,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   if (variant === "horizontal") {
     return (
-      <div className="max-w-2xl bg-white rounded-lg p-6 font-sans hover:shadow-lg transition-shadow duration-300">
+      <Link href={`/product/${slug}`} className="max-w-2xl bg-white rounded-lg p-6 font-sans hover:shadow-lg transition-shadow duration-300" onClick={onClick}>
         <div className="flex gap-6">
           <div className="flex-shrink-0 w-48">
             <div className="bg-gray-50 rounded-lg p-1 h-32 flex items-center justify-center">
@@ -92,20 +97,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
             </div>
           </div>
         </div>
-      </div>
+      </Link>
     )
   }
 
   return (
-    <div className="w-[390px] bg-white rounded-lg p-2 font-sans">
+    <Link href={`/product/${slug}`} onClick={onClick} className="w-[390px] bg-white rounded-lg p-2 font-sans cursor-pointer">
       <div className="flex justify-center mb-4 bg-gray-50 rounded-lg p-1">
-        <img src={image || "/placeholder.svg"} alt={title} className="w-full h-32 object-contain" />
+        <img src={image || "/placeholder.svg"} alt={title} className="w-full h-32 object-cover" />
       </div>
       <h2 className="text-gray-800 text-md font-normal mb-4 leading-tight line-clamp-2">{title}</h2>
       <PriceSection />
       {Boolean(installments) && <InstallmentsSection />}
       {Boolean(shipping) && <ShippingSection />}
-    </div>
+    </Link>
   )
 }
 

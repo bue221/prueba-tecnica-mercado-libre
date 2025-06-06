@@ -1,18 +1,66 @@
-// Types
-export interface User {
-  id: string;
+export type InstallmentInfo = {
+  count: number;
+  amount: number;
+  total: number;
+  interest: boolean;
+  interestRate?: number; // solo si interest = true
+};
+
+export type PaymentMethod = "Tarjeta de crédito" | "PSE" | "Efectivo" | "MercadoPago";
+
+export type ShippingInfo = {
+  isFree: boolean;
+  deliveryTime: string; // ej. "24h"
+  fullfilmentByPlatform: boolean;
+};
+
+export type SellerInfo = {
   name: string;
-  email: string;
-}
+  isOfficialStore: boolean;
+  level: string;
+  totalSales: string;
+  rating: number;
+};
 
-// Constants
-export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+export type ProductStats = {
+  soldCount: number;
+  rating: number;
+  reviewCount: number;
+  stockAvailable: number;
+};
 
-// Utils
-export const formatDate = (date: Date): string => {
-  return new Intl.DateTimeFormat('es-AR', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  }).format(date);
-}; 
+export type ProductSpecifications = {
+  color: string;
+  voltage: string;
+  functions: string[];
+  wireless: boolean;
+  batteryLife: string;
+  chargeTime: string;
+  waterResistant: boolean;
+  silent: boolean;
+  travelFriendly: boolean;
+  combs: number;
+  includedAccessories: string[];
+};
+
+export type PricingInfo = {
+  originalPrice: number;
+  discount: number;
+  currentPrice: number;
+  installments: InstallmentInfo;
+};
+
+export type Product = {
+  id: number;
+  slug: string;
+  title: string;
+  description: string;
+  condition: "Nuevo" | "Usado";
+  images: string[];
+  pricing: PricingInfo;
+  paymentMethods: PaymentMethod[];
+  shipping: ShippingInfo;
+  seller: SellerInfo;
+  stats: ProductStats;
+  specifications: ProductSpecifications;
+};
