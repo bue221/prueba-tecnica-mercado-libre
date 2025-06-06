@@ -169,6 +169,9 @@ importers:
       '@modelcontextprotocol/sdk':
         specifier: ^1.12.1
         version: 1.12.1
+      zod:
+        specifier: ^3.25.53
+        version: 3.25.53
     devDependencies:
       '@types/node':
         specifier: ^22.15.29
@@ -4952,8 +4955,8 @@ packages:
     peerDependencies:
       zod: ^3.24.1
 
-  zod@3.25.51:
-    resolution: {integrity: sha512-TQSnBldh+XSGL+opiSIq0575wvDPqu09AqWe1F7JhUMKY+M91/aGlK4MhpVNO7MgYfHcVCB1ffwAUTJzllKJqg==}
+  zod@3.25.53:
+    resolution: {integrity: sha512-BKOKoY3XcGUVkqaalCtFK15LhwR0G0i65AClFpWSXLN2gJNBGlTktukHgwexCTa/dAacPPp9ReryXPWyeZF4LQ==}
 
 snapshots:
 
@@ -5793,8 +5796,8 @@ snapshots:
       express-rate-limit: 7.5.0(express@5.1.0)
       pkce-challenge: 5.0.0
       raw-body: 3.0.0
-      zod: 3.25.51
-      zod-to-json-schema: 3.24.5(zod@3.25.51)
+      zod: 3.25.53
+      zod-to-json-schema: 3.24.5(zod@3.25.53)
     transitivePeerDependencies:
       - supports-color
 
@@ -10352,8 +10355,8 @@ snapshots:
 
   yoctocolors-cjs@2.1.2: {}
 
-  zod-to-json-schema@3.24.5(zod@3.25.51):
+  zod-to-json-schema@3.24.5(zod@3.25.53):
     dependencies:
-      zod: 3.25.51
+      zod: 3.25.53
 
-  zod@3.25.51: {}
+  zod@3.25.53: {}
