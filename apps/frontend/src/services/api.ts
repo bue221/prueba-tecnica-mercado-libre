@@ -4,7 +4,7 @@ import type { Product } from '@mercado-libre/shared'
 export const productsApi = createApi({
   reducerPath: 'productsApi',
   baseQuery: fetchBaseQuery({ 
-    baseUrl: 'http://localhost:3008',
+    baseUrl: process.env.NEXT_PUBLIC_API_URL || '',
     prepareHeaders: (headers) => {
       headers.set('Content-Type', 'application/json')
       headers.set('Accept', 'application/json')

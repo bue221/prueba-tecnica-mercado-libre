@@ -40,7 +40,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
     <div className={variant === "vertical" ? "mb-4" : ""}>
       {originalPrice && <p className="text-gray-400 line-through text-sm mb-1">{formatPrice(originalPrice)}</p>}
       <div className={`flex items-center gap-${variant === "vertical" ? "2" : "3"} flex-wrap`}>
-        <span className={`text-${variant === "vertical" ? "md" : "xl"} font-light text-gray-800`}>{formatPrice(currentPrice)}</span>
+        <span className={`text-${variant === "vertical" ? "md" : "md"} font-light text-gray-800`}>{formatPrice(currentPrice)}</span>
         {discount && <span className="text-green-600 font-medium text-sm bg-green-50 px-2 py-1 rounded">{discount} OFF</span>}
       </div>
     </div>
@@ -84,17 +84,15 @@ const ProductCard: React.FC<ProductCardProps> = ({
     return (
       <Link href={`/product/${slug}`} className="max-w-2xl bg-white rounded-lg p-6 font-sans hover:shadow-lg transition-shadow duration-300" onClick={onClick}>
         <div className="flex gap-6">
-          <div className="flex-shrink-0 w-48">
-            <div className="bg-gray-50 rounded-lg p-1 h-32 flex items-center justify-center">
-              <img src={image || "/placeholder.svg"} alt={title} className="w-full h-full object-contain" />
+          <div className="flex-shrink-0 w-32">
+            <div className="bg-gray-50 rounded-lg p-1 h-28 flex items-center justify-center">
+              <img src={image || "/placeholder.svg"} alt={title} className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="flex-1 flex flex-col justify-between">
             <h2 className="text-gray-800 text-xl font-normal mb-3 leading-tight line-clamp-2">{title}</h2>
             <div className="space-y-3">
               <PriceSection />
-              <InstallmentsSection />
-              <ShippingSection />
             </div>
           </div>
         </div>

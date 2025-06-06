@@ -1,6 +1,6 @@
 "use client"
 
-import ProductSection from "@/components/ProductSection";
+import ProductSection from "@/features/main/ProductSection";
 import { setProduct } from "@/lib/slices/products";
 import { useGetProductsQuery } from "@/services/api";
 import { Product } from "@mercado-libre/shared";

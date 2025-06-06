@@ -1,5 +1,5 @@
 import CarouselBanner from "@/components/CarouselBanner";
-import MainContent from "@/components/MainContent";
+import MainContent from "@/features/main/MainContent";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
