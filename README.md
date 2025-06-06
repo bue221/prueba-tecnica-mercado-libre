@@ -2,6 +2,15 @@
 
 Este proyecto es un monorepo que contiene múltiples aplicaciones y paquetes relacionados con Mercado Libre. Está construido utilizando pnpm workspaces y Turborepo para una gestión eficiente de dependencias y construcción.
 
+## 📚 Documentación Adicional
+
+Para entender mejor el propósito de esta prueba técnica y las decisiones técnicas tomadas, puedes revisar la documentación detallada en el directorio `documents/`. Allí encontrarás:
+- Explicación del problema a resolver
+- Justificación de las decisiones técnicas
+- Arquitectura del sistema
+- Consideraciones de diseño
+- Guías de implementación
+
 ## 🏗️ Estructura del Proyecto
 
 ```
@@ -92,4 +101,4 @@ Si encuentras algún problema:
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.md) para más detalles. 
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE.md](LICENSE.md) para más detalles.
