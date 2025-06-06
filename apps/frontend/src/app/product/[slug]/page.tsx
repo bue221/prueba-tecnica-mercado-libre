@@ -12,12 +12,14 @@ import {
 } from "@/features/product/components";
 import { Metadata } from "next";
 
+const API_KEY = '1234'
+
 async function getProduct(slug: string) {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/slug/${slug}`, {
     cache: 'no-store',
     headers: {
       'Content-Type': 'application/json',
-      'x-api-key': process.env.API_KEY || ''
+      'x-api-key': API_KEY
     },
   });
   return response.json();
@@ -28,7 +30,7 @@ async function getRelatedProducts(id: number) {
     cache: 'no-store',
     headers: {
       'Content-Type': 'application/json',
-      'x-api-key': process.env.API_KEY || ''
+      'x-api-key': API_KEY
     },
   });
   return response.json();
