@@ -1,3 +1,5 @@
+import fetch  from 'node-fetch'
+
 // Helper function for making NWS API requests
 export async function makeRequest<T>(url: string,config?: any): Promise<T | null> {
     const headers = {
@@ -6,7 +8,7 @@ export async function makeRequest<T>(url: string,config?: any): Promise<T | null
     };
   
     try {
-      const response = await fetch(url, { headers,...config });
+      const response = await fetch(url, { headers, ...config });
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }

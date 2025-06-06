@@ -3,10 +3,6 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod";
 import { makeRequest } from "./helpers.js";
 
-interface ProductParams {
-  productId: string;
-}
-
 // Create server instance
 const server = new McpServer({
   name: "mercado-libre",
@@ -18,6 +14,7 @@ const server = new McpServer({
 });
 
 // Register weather tools
+// @ts-ignore - Suppressing deep type instantiation error from MCP SDK
 server.tool(
   "get-product-info",
   "Return the information of a product by its id",
@@ -33,7 +30,7 @@ server.tool(
         content: [
           {
             type: "text",
-            text: "Failed to retrieve product data",
+            text: `Failed to retrieve product data`,
           },
         ],
       };
@@ -44,7 +41,7 @@ server.tool(
       content: [
         {
           type: "text",
-          text: JSON.stringify(productData)
+          text: `Product Data: ${JSON.stringify(productData)}`
         },
       ],
     };
