@@ -9,8 +9,8 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "dev:front": "pnpm --filter=frontend dev",
-    "dev:mcp": "pnpm --filter=mcp-server dev",
     "dev:back": "pnpm --filter=backend start",
+    "dev:mcp": "cd apps/mcp-server && pnpm build",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "clean": "turbo run clean && rm -rf node_modules"
