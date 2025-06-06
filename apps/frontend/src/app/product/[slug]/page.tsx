@@ -35,8 +35,9 @@ async function getRelatedProducts(id: number) {
 }
 
 // Generate metadata for the product page
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const product = await getProduct(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const product = await getProduct(slug);
 
   if (!product) {
     return {
@@ -50,7 +51,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     openGraph: {
       title: product.title,
       description: `${product.title} - ${product.condition} | ${product.soldCount}+ vendidos`,
-      images: product.images.map((img: any) => ({
+      images: product.images.map((img: string) => ({
         url: img,
         width: 1200,
         height: 630,
@@ -66,8 +67,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default async function ProductDetail({ params }: { params: { slug: string } }) {
-  const product = await getProduct(params.slug);
+export default async function ProductDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = await getProduct(slug);
   if (!product) return notFound();
 
   const relatedProducts = await getRelatedProducts(product.id);

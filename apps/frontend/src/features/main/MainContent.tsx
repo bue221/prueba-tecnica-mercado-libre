@@ -5,6 +5,7 @@ import { setProduct } from "@/lib/slices/products";
 import { useGetProductsQuery } from "@/services/api";
 import { Product } from "@mercado-libre/shared";
 import { useDispatch } from "react-redux";
+import Image from "next/image";
 
 
 
@@ -54,7 +55,13 @@ export default function MainContent() {
                     <ProductSection products={productChunks[1]} onClickProduct={handleClickProduct} />
                 </div>
                 <div>
-                    <img src="/img/banner_2.webp" alt="Banner" className="w-full h-full object-cover rounded-lg" />
+                    <Image
+                        src="/img/banner_2.webp"
+                        alt="Banner"
+                        width={1200}
+                        height={300}
+                        className="w-full h-full object-cover rounded-lg"
+                    />
                 </div>
                 <ProductSection products={productChunks[2]} onClickProduct={handleClickProduct} />
             </div>

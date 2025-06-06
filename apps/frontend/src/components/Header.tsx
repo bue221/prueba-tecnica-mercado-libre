@@ -36,10 +36,12 @@ export default function Header() {
 
           {/* Promo Banner */}
           <div className="hidden md:block">
-            <img
+            <Image
               src="/img/banner.webp"
               alt="Envío gratis"
-              className="h-8"
+              width={200}
+              height={32}
+              className="h-8 w-auto"
             />
           </div>
         </div>

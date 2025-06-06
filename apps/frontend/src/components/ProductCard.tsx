@@ -1,5 +1,6 @@
 import { formatPrice } from "@/lib/utils"
 import Link from "next/link"
+import Image from "next/image"
 import type React from "react"
 
 interface ProductCardProps {
@@ -86,7 +87,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <div className="flex gap-6">
           <div className="flex-shrink-0 w-32">
             <div className="bg-gray-50 rounded-lg p-1 h-28 flex items-center justify-center">
-              <img src={image || "/placeholder.svg"} alt={title} className="w-full h-full object-cover" />
+              <Image
+                src={image || "/placeholder.svg"}
+                alt={title}
+                width={128}
+                height={112}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           <div className="flex-1 flex flex-col justify-between">
@@ -103,7 +110,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <Link href={`/product/${slug}`} onClick={onClick} className="min-w-[250px]  w-[250px] bg-white rounded-lg p-2 font-sans cursor-pointer">
       <div className="flex justify-center mb-4 bg-gray-50 rounded-lg p-1">
-        <img src={image || "/placeholder.svg"} alt={title} className="w-full h-32 object-cover" />
+        <Image
+          src={image || "/placeholder.svg"}
+          alt={title}
+          width={250}
+          height={128}
+          className="w-full h-32 object-cover"
+        />
       </div>
       <h2 className="text-gray-800 text-md font-normal mb-4 leading-tight line-clamp-2">{title}</h2>
       <PriceSection />
