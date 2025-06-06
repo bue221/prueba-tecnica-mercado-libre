@@ -11,7 +11,7 @@ export const ProductGallery = ({ images }: ProductGalleryProps) => {
     const [mainImage, setMainImage] = useState(0);
 
     return (
-        <div className="col-span-1 grid grid-cols-8">
+        <div className="col-span-1 grid grid-cols-1 md:grid-cols-8">
             {/* Left Column - Image Gallery */}
             <div className="hidden md:block md:col-span-2">
                 <div className="space-y-2">

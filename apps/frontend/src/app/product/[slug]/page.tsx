@@ -115,7 +115,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ slug
 
             {/* Right Sidebar */}
             <div className="col-span-1 md:col-span-4">
-              <div className="h-[1800px]">
+              <div className="md:h-[1800px]">
                 <div className="sticky top-0 px-2 md:px-0 mb-12">
                   <div className="space-y-4">
                     <div className="flex items-center gap-2 text-sm">
